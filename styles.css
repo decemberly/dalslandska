@@ -1,7 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --color-marine: #2a3344;
+    --color-white: #ffffff;
 }
 
 body {
@@ -10,15 +9,30 @@ body {
     background-color: #ffffff;
     color: #333;
     line-height: 1.6;
-    padding: 2rem;
 }
+
+.header {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+    @media (min-width: 1400px) {
+        .header {
+            margin: 3rem 0;
+        }
+    }
 
 h1 {
     font-weight: 400;
     font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    letter-spacing: 0.05em
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.main {
+    padding: 0 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 p {
@@ -31,29 +45,64 @@ strong {
 
 a {
     color: #000;
+    text-underline-offset: 0.15em;
+    transition: color 0.3s ease
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: maroon;
 }
 
 section {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    flex-wrap: wrap;
 }
 
-article {
+.article {
     flex: 1 1 300px;
     padding: 2rem;
     background-color: #f9f9f9;
 }
 
+@media (min-width: 1400px) {
+    .article {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        width: 100%;
+    }
 
-@media (max-width: 767px) {
-    article:first-child {
-        flex: 2 1 400px;
-        font-size: 1.25em;
+    .article .article-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .article img {
+        margin-bottom: 0;
     }
 }
 
-h2 {
+.article-content {
+    width: 100%;
+}
+
+.pre-title {
+    color: #666;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.2rem;
+    display: block;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
     margin: 0 0 0.2em;
     line-height: 1.2;
 }
@@ -72,14 +121,36 @@ img {
 }
 
 .price {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     margin-top: 0.5rem;
+    margin-bottom: 0;
+    text-align: right;
 }
 
-footer {
-    text-align: center;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    color: #666;
+.footer {
+    background-color: var(--color-marine);
+    color: var(--color-white);
+    margin-top: 4em;
+    overflow: hidden;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: 1.2rem;
+}
+
+.footer a {
+    color: var(--color-white);
+    text-underline-offset: 0.15em;
+    transition: color 0.3s ease
+}
+
+.footer a:hover,
+.footer a:focus,
+.footer a:active {
+    color: var(--color-white);
+    text-decoration: none;
 }
