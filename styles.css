@@ -29,6 +29,18 @@ h1 {
     margin: 0;
 }
 
+.subtitle {
+    background-color: var(--color-marine);
+    color: var(--color-white);
+    padding: 0.5rem 0;
+    text-align: center;
+    margin: 0 auto 2rem;
+    max-width: 300px;
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+}
+
 .main {
     padding: 0 2rem;
     max-width: 1600px;
@@ -62,6 +74,7 @@ section {
 }
 
 .article {
+    box-sizing: border-box;
     flex: 1 1 300px;
     padding: 2rem;
     background-color: #f9f9f9;
